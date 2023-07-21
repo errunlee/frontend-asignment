@@ -3,8 +3,9 @@
 import React, { useContext,useEffect,useState } from 'react'
 import { AppContext } from '../context/Appcontext';
 import SingleProduct from '../components/SingleProduct';
+import Loader from '../components/Loader';
 function Search() {
-    const {setCategory,searchItem,allProducts,setAllProducts}=useContext(AppContext)
+    const {setCategory,searchItem,allProducts,setAllProducts,loading}=useContext(AppContext)
     const [query,setQuery]=useState('');
     
     const handleSubmit=(e)=>{
@@ -29,8 +30,12 @@ function Search() {
     <div className='container d-flex justify-content-center flex-column align-items-center'>
         <p className='lead text-warning fw-bold'>Find a product of your choice.</p>
         <form onSubmit={handleSubmit} ><input value={query} onChange={((e)=>{setQuery(e.target.value)})} type='text' placeholder='Search a product...' className='p-2' ></input><button type='submit' className='btn px-3 py-2 mx-2 btn-primary btn-sm'>Search</button></form >
+        {
+          loading?<Loader/>:''
+        }
         <div className="d-flex flex-wrap">
-        {allProducts && allProducts.length>0 &&
+        {
+        !loading && allProducts && allProducts.length>0 &&
         allProducts.map((singleProduct)=>{
           return <div key={singleProduct.id} className='col-md-4 col-lg-3 col-6'><SingleProduct singleProduct={singleProduct}/></div>
         })

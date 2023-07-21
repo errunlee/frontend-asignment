@@ -16,7 +16,6 @@ export default function Navbar(){
       <ul className={`nav-links list-unstyled m-0  d-lg-flex ${show?'d-block':'d-none'}`}>
       <Link to='/' onClick={()=>{setShow(!show)}}><li id='home' className='mx-lg-2 lead'>Home</li></Link>
      <Link  to='/search' onClick={()=>{setShow(!show)}}> <li id='search' className='mx-lg-2 lead'>Search</li></Link>
-      <Link to='/products' onClick={()=>{setShow(!show)}}> <li id='products' className='mx-lg-2 lead'>Our Products</li></Link>
       </ul>
       <div className='d-lg-flex '>
     <Link to='/cart' onClick={()=>{setShow(!show)}} className='text-decoration-none text-dark d-flex my-3 my-lg-0 mx-lg-4'>  <span className={`  d-lg-block ${show?'d-block':'d-none'}`}><div className='position-relative cart-box'>Cart<FaShoppingCart className='mx-1' style={{height:'30px',width:'30px'}} /><p className='position-absolute m-0 text-center'>{amount}</p></div></span></Link>

@@ -5,7 +5,6 @@ import Loader from '../components/Loader'
 import {AppContext} from '../context/Appcontext'
 import {useEffect} from 'react'
 import {useLocation,Link} from 'react-router-dom'
-import { GiReturnArrow } from 'react-icons/gi'
 
 export default function Products(){
   const [selectedSort,setSelectedSort]=useState(null)
@@ -17,13 +16,7 @@ export default function Products(){
     // handlePriceRangeChange();
   },[]);
   //for actvei class
-     useEffect(()=>{
-    const linkItem=document.querySelector('#products')
-    linkItem.classList.add('active')    
-    return(()=>{
-      linkItem.classList.remove('active')
-    })
-  },[])
+    
  
   // if(allProducts.length<=0){
   //   return <div><h2 className='text-center text-danger'>No items found.</h2></div>
@@ -43,9 +36,10 @@ export default function Products(){
   }
 
   return (
-    <div>
-      <h2 className='text-uppercase pathname py-3'>{location.pathname}</h2>
-    <div className='container my-3'>
+    <div className='mt-5'>
+<h1 className='text-center fw-bolder'>Browse Products</h1>
+<hr></hr>
+    <div className='container my-5'>
        <div className='row justify-content-between'>
        <div className='col-md-2'>
          <Searchside categories={categories} getAllProducts={getAllProducts}/>

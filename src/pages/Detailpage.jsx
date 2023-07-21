@@ -42,7 +42,7 @@ export default function Detailpage(){
     <div>
     <h2 className='text-uppercase pathname py-3'>/ Products / {detail.title}</h2>
     <div className='container'>
-    <Link to='/products' className='my-3 p-1 btn btn-secondary rounded-0'>BACK TO PRODUCTS</Link>
+    <Link to='/' className='my-3 p-1 btn btn-secondary rounded-0'>BACK TO PRODUCTS</Link>
       <div className='row justify-content-between my-4 '>
       <div className='col-md-4'>
       <img src={image} className='img-fluid'/>

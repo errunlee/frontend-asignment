@@ -1,6 +1,6 @@
-import Whyus from '../components/Whyus'
 import {useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import Products from './Products'
 export default function Homepage(){
       useEffect(()=>{
     const linkItem=document.querySelector('#home')
@@ -21,9 +21,8 @@ export default function Homepage(){
         <img className='img-fluid' src='https://picsum.photos/id/60/500/300'></img>
       </div>
       </div>
-     <Link to='/products' className='btn btn-info my-2'>SHOP NOW</Link>
+     <Products/>
       <div>
-      <Whyus/>
       </div>
    
     </div>
